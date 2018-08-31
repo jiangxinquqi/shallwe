@@ -1,8 +1,11 @@
-package com.xiao.api.controller;
+package com.xiao.api;
 
 import com.xiao.entity.Demo;
+import com.xiao.vo.JsonView;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * @desc: 功能描述：（演示接口）
@@ -13,6 +16,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 public interface DemoApi {
 
     @GetMapping("/demo")
-    Demo findDemoById(@RequestParam(required = true) Long id);
+    JsonView findDemoById(@RequestParam(value = "id", required = true) int id);
 
 }

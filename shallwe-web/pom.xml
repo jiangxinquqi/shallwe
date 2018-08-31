@@ -10,6 +10,19 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>shallwe-web</artifactId>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>shallwe-web-demo</module>
+    </modules>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.xiao</groupId>
+            <artifactId>shallwe-discovery-client-feign</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+    </dependencies>
 
 
 </project>

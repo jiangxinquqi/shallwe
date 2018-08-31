@@ -14,6 +14,8 @@ import lombok.Setter;
 public class Demo {
 
     private int id;
-    private String name;
+    private String url;
+    private String serviceName;
+    private String port;
 
 }

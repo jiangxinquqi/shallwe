@@ -18,6 +18,9 @@ public class JsonView implements Serializable {
 
     public Object data;
 
+    public JsonView() {
+    }
+
     public JsonView(ServerCode serverCode, Object data) {
         this.code = serverCode.getCode();
         this.msg = serverCode.getMsg();

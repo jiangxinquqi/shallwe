@@ -2,47 +2,27 @@
     shallwe	
     |——project-tools	   				
     |——project-doc	   				
-    |——shallwe-common	--公共模块   				
-    |——shallwe-entity
-    |——shallwe-dao
-    |——shallwe-api	                    
-        |——shallwe-api-demo	   	       
-    |——shallwe-service                   
-        |——shallwe-service-demo	         
-    |——shallwe-web					    
-        |——shallwe-web-demo				
-    |——shallwe-discovery-server-eureka	
-    |——shallwe-discovery-client-feign		
-    |——shallwe-discovery-gateway-zuul		
+    |——shallwe-common	    --公共模块   				
+    |——shallwe-demo         --demo系统
+        |——shallwe-demo-common  --demo公共模块
+        |——shallwe-demo-dao     --demo持久层【代码机自动生成代码】
+        |——shallwe-demo-api     --demo接口
+        |——shallwe-demo-service --demo微服务【端口：8762 & 8763】
+        |——shallwe-demo-web     --demo前端工程（demo微服务消费者）【端口：8764】
+    |——shallwe-discovery-server-eureka	    --服务注册中心【端口：8761】
+    |——shallwe-discovery-client-feign	    --负载均衡	
+    |——shallwe-discovery-gateway-zuul	    --服务网关【端口：8769】
     
-## 包结构
-    com.xiao
-        --common               -公共组件
-            --util             -公共组件-工具类
-            --vo			   -公共组件-视图模型
-            --exception		   -公共组件-自定义异常
-            --constant         -公共组件-常量
-         --entity              -数据实体
-         --dao                 -数据访问
-         --api
-            --controller       -接口控制层
-         --web
-            --controller       -web控制层 
-         --config              -项目配置       
-            
-       
-        --config               // 项目模块配置
-        --core				   // 项目基础模块
-            --domain		   // 项目基础模块-数据模型
-        --api                  // 微服务接口
-            --feign			   // 微服务接口-调用客户端
-            --interceptor	   // 微服务接口-拦截器
-            --controller	   // 微服务接口-微服务实现
-            --service		   // 业务层
-                --impl		   // 业务层-业务实现层
-            --dao	   	       // 数据访问层
-        --web				   // web工程
-            --interceptor	   // web工程-web拦截器
-            --controller	   // web工程-web控制层
-            
+## 包结构 
+    com.xiao.common.util    --公共组件-工具类
+    com.xiao.common.vo      --公共组件-视图模型
+    com.xiao.common.exception   --公共组件-自定义异常
+    com.xiao.common.constant    --公共组件-常量
+    com.xiao.*.common   --系统公共组件（*代表具体的系统）
+    com.xiao.*.api      --微服务接口（*代表具体的系统）
+    com.xiao.*.api.controller   --微服务提供者（*代表具体的系统）
+    com.xiao.*.dao.model    --数据模型
+    com.xiao.*.dao.mapper   --数据模型映射
+    com.xiao.*.web.controller   --web工程
+    
         

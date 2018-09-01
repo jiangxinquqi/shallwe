@@ -9,16 +9,11 @@
     <packaging>pom</packaging>
     <version>1.0.0</version>
     <modules>
-        <module>shallwe-discovery-server-eureka</module>
         <module>shallwe-common</module>
+        <module>shallwe-discovery-server-eureka</module>
         <module>shallwe-discovery-client-feign</module>
         <module>shallwe-discovery-gateway-zuul</module>
-        <module>shallwe-entity</module>
-        <module>shallwe-dao</module>
-        <module>shallwe-api</module>
-        <module>shallwe-api</module>
-        <module>shallwe-service</module>
-        <module>shallwe-web</module>
+        <module>shallwe-demo</module>
     </modules>
 
     <properties>

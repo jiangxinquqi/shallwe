@@ -1,6 +1,7 @@
 package com.xiao.api.feign;
 
-import com.xiao.api.DemoApi;
+
+import com.xiao.demo.api.DemoApi;
 import org.springframework.cloud.openfeign.FeignClient;
 
 /**
@@ -11,4 +12,5 @@ import org.springframework.cloud.openfeign.FeignClient;
  */
 @FeignClient(value = "SERVICE-DEMO", fallback = DemoServiceHystric.class)
 public interface DemoServiceFeign extends DemoApi {
+
 }

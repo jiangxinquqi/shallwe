@@ -1,12 +1,11 @@
 package com.xiao.api.feign;
 
-import com.xiao.constant.ServerCode;
-import com.xiao.entity.Demo;
-import com.xiao.vo.JsonView;
+import com.xiao.common.constant.ServerCode;
+
+import com.xiao.common.vo.JsonView;
+import com.xiao.demo.dao.model.Demo;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestParam;
-
-import javax.servlet.http.HttpServletRequest;
 
 /**
  * @desc: 功能描述：（断路由）

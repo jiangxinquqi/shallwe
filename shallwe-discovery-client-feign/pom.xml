@@ -19,6 +19,11 @@
             <version>1.0.0</version>
         </dependency>
         <dependency>
+            <groupId>com.xiao</groupId>
+            <artifactId>shallwe-user-api</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>

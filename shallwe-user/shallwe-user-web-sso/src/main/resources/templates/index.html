@@ -7,10 +7,34 @@
     <script th:src="@{/js/jquery-2.1.0.min.js}"></script>
     <script type="text/javascript">
         $(function () {
-           $("#loginsubmit").click(function () {
-               alert('我在登录');
-           });
-
+            $("#loginsubmit").click(function () {
+                alert($('#formlogin').serialize());
+                var redirectUri = $("#redirect_uri").val();
+                alert(redirectUri);
+                $.ajax({
+                    //几个参数需要注意一下
+                    type: "POST",//方法类型
+                    dataType: "json",//预期服务器返回的数据类型
+                    url: "/login",//url
+                    data: $('#formlogin').serialize(),
+                    success: function (result) {
+                        console.log(result);//打印服务端返回的数据(调试用)
+                        if (result.code == 200) {
+                            alert("登录成功");
+                            if (redirectUri == "") {
+                                location.href = "https://github.com/xiaoxiao65535/shallwe";
+                            } else {
+                                location.href = redirectUri;
+                            }
+                        } else {
+                            alert("失败，原因：" + data);
+                        }
+                    },
+                    error: function () {
+                        alert("异常！");
+                    }
+                });
+            });
             $("#wxlogin").click(function () {
                 alert('我在weixin登录');
             });
@@ -20,10 +44,11 @@
 </head>
 <body>
 <h2>这里是单点服务系统</h2>
-<h1 th:text="${host}">Hello World</h1>
-<form>
-    手机号：<input type="text" id="username">
-    密码：<input type="password" id="password">
+<h1 th:text="${redirect_uri}">Hello World</h1>
+<input id="redirect_uri" type="hidden" th:value="${redirect_uri}">
+<form id="formlogin">
+    用户名：<input type="text" id="username" name="username">
+    密码：<input type="password" id="password" name="password">
     <input type="button" id="loginsubmit" value="登录">
     <input type="button" id="wxlogin" value="微信登录">
 </form>

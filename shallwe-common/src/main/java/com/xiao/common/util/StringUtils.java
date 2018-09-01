@@ -11,13 +11,33 @@ import java.util.UUID;
 public class StringUtils {
 
     /**
+     * 功能描述: <生成随机16位大写字符>
+     *
+     * @Author: jianjun.xiao
+     * @Date: 2018/8/31 13:10
+     */
+    public static String nonStr() {
+        return UUID.randomUUID().toString().toUpperCase().replaceAll("-", "");
+    }
+
+    /**
      * 功能描述: <生成随机uuid字符串>
      *
      * @Author: jianjun.xiao
      * @Date: 2018/8/31 13:10
      */
-    public static String createNonceStr() {
-        return UUID.randomUUID().toString().toUpperCase().replace("-", "");
+    public static String UUID() {
+        return UUID.randomUUID().toString();
+    }
+
+    /**
+     * 功能描述: <生成随机uuid大写字符串>
+     *
+     * @Author: jianjun.xiao
+     * @Date: 2018/8/31 13:10
+     */
+    public static String UUID2UpperCase() {
+        return UUID().toUpperCase();
     }
 
     /**

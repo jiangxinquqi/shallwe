@@ -61,4 +61,7 @@ public class JsonView implements Serializable {
         this.data = data;
     }
 
+    public boolean isSuccess() {
+        return this.code == ServerCode.SERVER_CODE_200.getCode();
+    }
 }

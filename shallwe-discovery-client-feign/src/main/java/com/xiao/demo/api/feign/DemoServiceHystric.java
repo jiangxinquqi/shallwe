@@ -1,4 +1,4 @@
-package com.xiao.api.feign;
+package com.xiao.demo.api.feign;
 
 import com.xiao.common.constant.ServerCode;
 
@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestParam;
  */
 @Component
 public class DemoServiceHystric implements DemoServiceFeign {
-
     @Override
     public JsonView findDemoById(@RequestParam(value = "id", required = true) int id) {
         Demo demo = new Demo();

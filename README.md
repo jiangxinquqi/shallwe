@@ -1,3 +1,6 @@
+## 技术选型
+    
+    
 ## 项目结构
     shallwe	
     |——project-tools	   				
@@ -9,9 +12,16 @@
         |——shallwe-demo-api     --demo接口
         |——shallwe-demo-service --demo微服务【端口：8762 & 8763】
         |——shallwe-demo-web     --demo前端工程（demo微服务消费者）【端口：8764】
+    |——shallwe-user         --用户系统
+        |——shallwe-user-common  --用户公共模块
+        |——shallwe-user-dao     --用户持久层【代码机自动生成代码】
+        |——shallwe-user-api     --用户接口
+        |——shallwe-user-service --用户微服务【端口：8080 & 8081】
+        |——shallwe-user-web-center     --用户个人中心【端口：8082】
+        |——shallwe-user-web-sso     --单点系统【端口：8083】
     |——shallwe-discovery-server-eureka	    --服务注册中心【端口：8761】
     |——shallwe-discovery-client-feign	    --负载均衡	
-    |——shallwe-discovery-gateway-zuul	    --服务网关【端口：8769】
+    |——shallwe-discovery-gateway-zuul	    --服务网关【端口：9000】
     
 ## 包结构 
     com.xiao.common.util    --公共组件-工具类

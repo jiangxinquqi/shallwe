@@ -1,0 +1,12 @@
+server:
+  port: 8080
+spring:
+  output:
+    ansi:
+      enabled: always
+  application:
+    name: service-user
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/

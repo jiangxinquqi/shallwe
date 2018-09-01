@@ -11,6 +11,6 @@ eureka:
     hostname: sso
   client:
     registerWithEureka: false  #当前的微服务不注册到eureka之中
-    fetchRegistry: false
+#    fetchRegistry: false
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/

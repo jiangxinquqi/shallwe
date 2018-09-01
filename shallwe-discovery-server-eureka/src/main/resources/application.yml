@@ -14,3 +14,7 @@ spring:
   output:
     ansi:
       enabled: detect
+#  security:
+#    user:
+#      name: eureka
+#      password: eureka

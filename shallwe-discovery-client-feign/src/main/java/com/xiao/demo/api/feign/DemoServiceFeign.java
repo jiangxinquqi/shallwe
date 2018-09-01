@@ -1,4 +1,4 @@
-package com.xiao.api.feign;
+package com.xiao.demo.api.feign;
 
 
 import com.xiao.demo.api.DemoApi;

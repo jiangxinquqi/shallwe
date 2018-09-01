@@ -1,6 +1,6 @@
 package com.xiao.demo.web.controller;
 
-import com.xiao.api.feign.DemoServiceFeign;
+import com.xiao.demo.api.feign.DemoServiceFeign;
 import com.xiao.common.vo.JsonView;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

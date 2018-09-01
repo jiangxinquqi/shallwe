@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html>
+<head lang="en">
+    <meta charset="UTF-8"/>
+    <title>单点登录系统</title>
+    <script th:src="@{/js/jquery-2.1.0.min.js}"></script>
+    <script type="text/javascript">
+        $(function () {
+           $("#loginsubmit").click(function () {
+               alert('我在登录');
+           });
+
+            $("#wxlogin").click(function () {
+                alert('我在weixin登录');
+            });
+        });
+    </script>
+
+</head>
+<body>
+<h2>这里是单点服务系统</h2>
+<h1 th:text="${host}">Hello World</h1>
+<form>
+    手机号：<input type="text" id="username">
+    密码：<input type="password" id="password">
+    <input type="button" id="loginsubmit" value="登录">
+    <input type="button" id="wxlogin" value="微信登录">
+</form>
+</body>
+</html>

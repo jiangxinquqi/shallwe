@@ -1,4 +1,12 @@
 ## 技术选型
+
+### 后端技术：
+
+技术|版本|官网
+---|---|---
+Spring Boot|2.0.4.RELEASE|https://spring.io/projects/spring-boot
+Spring Cloud|Finchley.SR1|https://projects.spring.io/spring-cloud/
+
     
     
 ## 项目结构

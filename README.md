@@ -2,10 +2,10 @@
 
 ### 后端技术：
 
-技术|版本|官网
----|---|---
-Spring Boot|2.0.4.RELEASE|https://spring.io/projects/spring-boot
-Spring Cloud|Finchley.SR1|https://projects.spring.io/spring-cloud/
+技术|版本|说明|官网
+---|---|---|---
+Spring Boot|2.0.4.RELEASE|容器|https://spring.io/projects/spring-boot
+Spring Cloud|Finchley.SR1|微服务治理|https://projects.spring.io/spring-cloud/
 
     
     

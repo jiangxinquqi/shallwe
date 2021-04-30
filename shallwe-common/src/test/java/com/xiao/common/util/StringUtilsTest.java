@@ -7,16 +7,16 @@ public class StringUtilsTest extends TestCase {
 
     @Test
     public void testIsEmpty() {
-        assert StringUtils.isEmpty("");
-        assert StringUtils.isEmpty(null);
-        assert StringUtils.isEmpty("a") == false;
+        assert StringUtils.isNullOrEmpty("");
+        assert StringUtils.isNullOrEmpty(null);
+        assert StringUtils.isNullOrEmpty("a") == false;
     }
 
     @Test
     public void testIsNotEmpty() {
-        assert StringUtils.isNotEmpty("") == false;
-        assert StringUtils.isNotEmpty(null) == false;
-        assert StringUtils.isNotEmpty("a") == true;
+        assert StringUtils.isNotNullOrEmpty("") == false;
+        assert StringUtils.isNotNullOrEmpty(null) == false;
+        assert StringUtils.isNotNullOrEmpty("a") == true;
     }
 
 }

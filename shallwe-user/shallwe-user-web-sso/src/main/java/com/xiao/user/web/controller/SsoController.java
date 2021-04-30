@@ -1,6 +1,5 @@
 package com.xiao.user.web.controller;
 
-import com.alibaba.fastjson.JSON;
 import com.xiao.common.util.CookieUtils;
 import com.xiao.common.util.StringUtils;
 import com.xiao.common.vo.JsonView;
@@ -16,9 +15,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * @desc: 功能描述：（单点服务）
@@ -64,7 +60,7 @@ public class SsoController {
 
         String token = CookieUtils.getCookieValue(request, "token");
         // 判断cookie中是否有token
-        if (StringUtils.isEmpty(token)) {
+        if (StringUtils.isNullOrEmpty(token)) {
             //如果没有，跳转登录界面，并且设置回调地址
             map.addAttribute("redirect_uri", redirect_uri);
             return "index";

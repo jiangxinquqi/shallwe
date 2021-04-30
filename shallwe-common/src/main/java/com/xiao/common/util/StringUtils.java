@@ -41,12 +41,12 @@ public class StringUtils {
     }
 
     /**
-     * 功能描述: <判断某个字符串是否为null或者为"">
+     * 功能描述: <判断某个字符串是否为 null 或者 为"">
      *
      * @Author: jianjun.xiao
      * @Date: 2018/8/31 13:11
      */
-    public static boolean isEmpty(String str) {
+    public static boolean isNullOrEmpty(String str) {
         return (str == null || "".equals(str));
     }
 
@@ -56,8 +56,8 @@ public class StringUtils {
      * @param str
      * @return
      */
-    public static boolean isNotEmpty(String str) {
-        return !isEmpty(str);
+    public static boolean isNotNullOrEmpty(String str) {
+        return !isNullOrEmpty(str);
     }
 
 }

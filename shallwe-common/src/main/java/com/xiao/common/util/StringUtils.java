@@ -41,16 +41,23 @@ public class StringUtils {
     }
 
     /**
-     * 功能描述: <判断某个字符串是否为null或者为“”>
+     * 功能描述: <判断某个字符串是否为null或者为"">
      *
      * @Author: jianjun.xiao
      * @Date: 2018/8/31 13:11
      */
     public static boolean isEmpty(String str) {
-        if (str == null || "".equals(str)) {
-            return true;
-        }
-        return false;
+        return (str == null || "".equals(str));
+    }
+
+    /**
+     * <p>判断字符串 不为null & "" </>
+     *
+     * @param str
+     * @return
+     */
+    public static boolean isNotEmpty(String str) {
+        return !isEmpty(str);
     }
 
 }

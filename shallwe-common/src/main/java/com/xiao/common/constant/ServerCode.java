@@ -8,6 +8,8 @@ package com.xiao.common.constant;
  */
 public enum ServerCode {
 
+
+
     SERVER_CODE_101(101, "微信接口调用异常"),
     SERVER_CODE_200(200, "sucess"),
     SERVER_CODE_400(400, "参数异常，请查看是否正确设置参数值"),

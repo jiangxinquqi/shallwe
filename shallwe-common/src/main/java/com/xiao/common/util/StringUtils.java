@@ -46,8 +46,8 @@ public class StringUtils {
      * @Author: jianjun.xiao
      * @Date: 2018/8/31 13:11
      */
-    public static boolean isNullOrEmpty(String str) {
-        return (str == null || "".equals(str));
+    public static boolean isEmpty(String str) {
+        return (str == null || "".equals(str.trim()));
     }
 
     /**
@@ -56,8 +56,8 @@ public class StringUtils {
      * @param str
      * @return
      */
-    public static boolean isNotNullOrEmpty(String str) {
-        return !isNullOrEmpty(str);
+    public static boolean isNotEmpty(String str) {
+        return !isEmpty(str);
     }
 
 }

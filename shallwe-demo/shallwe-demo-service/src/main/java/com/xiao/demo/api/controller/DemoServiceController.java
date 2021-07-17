@@ -2,7 +2,7 @@ package com.xiao.demo.api.controller;
 
 import com.xiao.demo.api.DemoApi;
 import com.xiao.demo.dao.model.Demo;
-import com.xiao.common.vo.JsonView;
+import com.xiao.common.vo.RestResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -24,7 +24,7 @@ public class DemoServiceController implements DemoApi {
     private String port;
 
     @Override
-    public JsonView findDemoById(@RequestParam(value = "id", required = true) int id) {
+    public RestResponse findDemoById(@RequestParam(value = "id", required = true) int id) {
         Demo demo = new Demo();
         demo.setId(id);
         //demo.setUrl(request.getRequestURL().toString());
@@ -35,6 +35,6 @@ public class DemoServiceController implements DemoApi {
         log.debug("");
         log.error("");
         log.warn("");
-        return JsonView.sucess(demo);
+        return RestResponse.success(demo);
     }
 }

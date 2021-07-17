@@ -1,7 +1,7 @@
 package com.xiao.demo.web.controller;
 
 import com.xiao.demo.api.feign.DemoServiceFeign;
-import com.xiao.common.vo.JsonView;
+import com.xiao.common.vo.RestResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,7 +23,7 @@ public class DemoController {
     private DemoServiceFeign demoServiceFeign;
 
     @GetMapping("/web/demo")
-    public JsonView demo(int id) {
+    public RestResponse demo(int id) {
         HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
         String name = request.getParameter("name");
         System.out.println(name);

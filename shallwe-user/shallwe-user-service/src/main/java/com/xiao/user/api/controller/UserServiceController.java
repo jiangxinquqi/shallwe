@@ -1,7 +1,7 @@
 package com.xiao.user.api.controller;
 
 import com.xiao.common.util.StringUtils;
-import com.xiao.common.vo.JsonView;
+import com.xiao.common.vo.RestResponse;
 import com.xiao.user.api.UserApi;
 import com.xiao.user.dao.model.UserMock;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -31,28 +31,28 @@ public class UserServiceController implements UserApi {
     }
 
     @Override
-    public JsonView register(@RequestBody UserMock userMock) {
+    public RestResponse register(@RequestBody UserMock userMock) {
         userServiceMock.put(userMock.getId(), userMock);
-        return JsonView.sucess(userMock);
+        return RestResponse.success(userMock);
     }
 
     @Override
-    public JsonView login(@RequestParam(value = "username") String username,
-                          @RequestParam(value = "password") String password) {
+    public RestResponse login(@RequestParam(value = "username") String username,
+                              @RequestParam(value = "password") String password) {
         // 根据用户名查询用户
         UserMock userMock = login(username);
         // 生成token并且设置过期时间，并返回token
         String token = StringUtils.UUID();
         redisMock.put(token, userMock.getId());
-        return JsonView.sucess(token);
+        return RestResponse.success(token);
     }
 
     @Override
-    public JsonView info(@RequestParam(value = "token") String token) {
+    public RestResponse info(@RequestParam(value = "token") String token) {
         // 根据token查询userid
         Long userid = redisMock.get(token);
         // 根据userid查询用户信息,并且返回
-        return JsonView.sucess(userServiceMock.get(userid));
+        return RestResponse.success(userServiceMock.get(userid));
     }
 
     private UserMock login(String username) {

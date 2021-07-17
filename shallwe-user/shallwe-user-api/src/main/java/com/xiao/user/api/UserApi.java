@@ -1,6 +1,6 @@
 package com.xiao.user.api;
 
-import com.xiao.common.vo.JsonView;
+import com.xiao.common.vo.RestResponse;
 import com.xiao.user.dao.model.UserMock;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,13 +16,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 public interface UserApi {
 
     @PostMapping("/user/register")
-    JsonView register(@RequestBody UserMock userMock);
+    RestResponse register(@RequestBody UserMock userMock);
 
     @PostMapping("/user/login")
-    JsonView login(@RequestParam(value = "username") String username,
-                   @RequestParam(value = "password") String password);
+    RestResponse login(@RequestParam(value = "username") String username,
+                       @RequestParam(value = "password") String password);
 
     @GetMapping("/user/info")
-    JsonView info(@RequestParam(value = "token") String token);
+    RestResponse info(@RequestParam(value = "token") String token);
 
 }

@@ -1,8 +1,8 @@
 package com.xiao.demo.api.feign;
 
-import com.xiao.common.constant.ServerCode;
+import com.xiao.common.constant.RestResponseCodeEnum;
 
-import com.xiao.common.vo.JsonView;
+import com.xiao.common.vo.RestResponse;
 import com.xiao.demo.dao.model.Demo;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -16,9 +16,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Component
 public class DemoServiceHystric implements DemoServiceFeign {
     @Override
-    public JsonView findDemoById(@RequestParam(value = "id", required = true) int id) {
+    public RestResponse findDemoById(@RequestParam(value = "id", required = true) int id) {
         Demo demo = new Demo();
         // demo.setUrl(request.getRequestURL().toString());
-        return new JsonView(ServerCode.SERVER_CODE_500, demo);
+        return new RestResponse(RestResponseCodeEnum.SERVER_CODE_500, demo);
     }
 }

@@ -1,6 +1,6 @@
 package com.xiao.demo.api;
 
-import com.xiao.common.vo.JsonView;
+import com.xiao.common.vo.RestResponse;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -13,6 +13,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 public interface DemoApi {
 
     @GetMapping("/demo")
-    JsonView findDemoById(@RequestParam(value = "id", required = true) int id);
+    RestResponse findDemoById(@RequestParam(value = "id", required = true) int id);
 
 }

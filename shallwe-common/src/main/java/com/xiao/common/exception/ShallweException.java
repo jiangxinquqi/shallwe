@@ -1,6 +1,6 @@
 package com.xiao.common.exception;
 
-import com.xiao.common.constant.ServerCode;
+import com.xiao.common.constant.RestResponseCodeEnum;
 
 /**
  * @desc: 功能描述：（自定义异常）
@@ -10,19 +10,19 @@ import com.xiao.common.constant.ServerCode;
  */
 public class ShallweException extends Exception {
 
-    private ServerCode serverCode;
+    private RestResponseCodeEnum restResponseCodeEnum;
 
-    public ShallweException(ServerCode serverCode, String errmsg) {
+    public ShallweException(RestResponseCodeEnum restResponseCodeEnum, String errmsg) {
         super(errmsg);
-        this.serverCode = serverCode;
+        this.restResponseCodeEnum = restResponseCodeEnum;
     }
 
     public ShallweException(String message) {
         super(message);
     }
 
-    public ServerCode getServerCode() {
-        return this.serverCode;
+    public RestResponseCodeEnum getServerCode() {
+        return this.restResponseCodeEnum;
     }
 
 }

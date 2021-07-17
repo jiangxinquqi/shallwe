@@ -8,7 +8,7 @@ import java.io.Serializable;
  * @E-mail： xiaoxiao65535@163.com
  * @createTime： 2021/4/25 18:04
  */
-public interface URL extends Serializable {
+public interface RestURL extends Serializable {
 
     String TEST = "/test";
 

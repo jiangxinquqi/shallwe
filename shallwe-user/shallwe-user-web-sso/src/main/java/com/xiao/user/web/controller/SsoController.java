@@ -2,7 +2,7 @@ package com.xiao.user.web.controller;
 
 import com.xiao.common.util.CookieUtils;
 import com.xiao.common.util.StringUtils;
-import com.xiao.common.vo.JsonView;
+import com.xiao.common.vo.RestResponse;
 import com.xiao.user.api.feign.UserServiceFeign;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -60,7 +60,7 @@ public class SsoController {
 
         String token = CookieUtils.getCookieValue(request, "token");
         // 判断cookie中是否有token
-        if (StringUtils.isNullOrEmpty(token)) {
+        if (StringUtils.isEmpty(token)) {
             //如果没有，跳转登录界面，并且设置回调地址
             map.addAttribute("redirect_uri", redirect_uri);
             return "index";
@@ -71,11 +71,11 @@ public class SsoController {
 
     @PostMapping("/login")
     @ResponseBody
-    public JsonView login(HttpServletRequest request, HttpServletResponse response, String username, String password) {
+    public RestResponse login(HttpServletRequest request, HttpServletResponse response, String username, String password) {
         log.info("username {}:", username);
         log.info("password {}:", password);
         // RPC调用login服务获取token
-        JsonView result = userServiceFeign.login(username, password);
+        RestResponse result = userServiceFeign.login(username, password);
         if (result.isSuccess()) {
             String token = result.getData().toString();
             // 设置cookie

@@ -9,7 +9,7 @@ import java.util.Date;
  * @E-mail： xiaocen65535@163.com
  * @createTime： 2021/6/17 8:24
  */
-public class DateUtil {
+public class DateUtils {
     /**
      * <p> Date 转为 UTC（协调世界时）
      * <li> eg : 2021-04-08T07:46:18.425Z

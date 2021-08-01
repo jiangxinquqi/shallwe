@@ -14,7 +14,6 @@
         <module>shallwe-discovery-client-feign</module>
         <module>shallwe-discovery-gateway-zuul</module>
         <module>shallwe-demo</module>
-        <module>shallwe-sms</module>
         <module>shallwe-user</module>
     </modules>
 

@@ -16,17 +16,17 @@ public class UserServiceHystric implements UserServiceFeign {
 
     @Override
     public RestResponse register(@RequestBody UserMock userMock) {
-        return new RestResponse(RestResponseCodeEnum.SERVER_CODE_500, null);
+        return new RestResponse(RestResponseCodeEnum.HTTP_RESPONSE_500, null);
     }
 
     @Override
     public RestResponse login(String username, String password) {
-        return new RestResponse(RestResponseCodeEnum.SERVER_CODE_500, null);
+        return new RestResponse(RestResponseCodeEnum.HTTP_RESPONSE_500, null);
     }
 
     @Override
     public RestResponse info(@RequestParam(value = "token") String token) {
-        return new RestResponse(RestResponseCodeEnum.SERVER_CODE_500, null);
+        return new RestResponse(RestResponseCodeEnum.HTTP_RESPONSE_500, null);
     }
 
 }

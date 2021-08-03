@@ -19,6 +19,6 @@ public class DemoServiceHystric implements DemoServiceFeign {
     public RestResponse findDemoById(@RequestParam(value = "id", required = true) int id) {
         Demo demo = new Demo();
         // demo.setUrl(request.getRequestURL().toString());
-        return new RestResponse(RestResponseCodeEnum.SERVER_CODE_500, demo);
+        return new RestResponse(RestResponseCodeEnum.HTTP_RESPONSE_500, demo);
     }
 }

@@ -51,7 +51,7 @@ public class RestResponse<T> implements Serializable {
     }
 
     public static <T> RestResponse success(T data, Object extraInfo) {
-        return new RestResponse(RestResponseCodeEnum.SERVER_CODE_200, data, extraInfo);
+        return new RestResponse(RestResponseCodeEnum.HTTP_RESPONSE_200, data, extraInfo);
     }
 
     public static <T> RestResponse fail(RestResponseCodeEnum restResponseCodeEnum) {
@@ -67,6 +67,6 @@ public class RestResponse<T> implements Serializable {
     }
 
     public boolean isSuccess() {
-        return this.code == RestResponseCodeEnum.SERVER_CODE_200.getCode();
+        return this.code == RestResponseCodeEnum.HTTP_RESPONSE_200.getCode();
     }
 }

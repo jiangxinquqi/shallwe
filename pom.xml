@@ -15,6 +15,7 @@
         <module>shallwe-discovery-gateway-zuul</module>
         <module>shallwe-demo</module>
         <module>shallwe-user</module>
+        <module>shallwe-springboot-starter</module>
     </modules>
 
     <properties>

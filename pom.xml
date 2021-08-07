@@ -14,9 +14,12 @@
         <module>shallwe-discovery-server-eureka</module>
         <module>shallwe-discovery-client-feign</module>
         <module>shallwe-discovery-gateway-zuul</module>
-        <module>shallwe-microservice-user</module>
         <module>shallwe-platform-sso</module>
         <module>shallwe-platform-openapi</module>
+        <module>shallwe-microservice-user</module>
+        <module>shallwe-microservice-order</module>
+        <module>shallwe-microservice-content</module>
+        <module>shallwe-microservice-pay</module>
     </modules>
 
     <properties>

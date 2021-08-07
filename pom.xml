@@ -28,6 +28,7 @@
         <module>shallwe-microservice-pay/shallwe-microservice-pay-common</module>
         <module>shallwe-microservice-pay/shallwe-microservice-pay-dao</module>
         <module>shallwe-microservice-pay/shallwe-microservice-pay-service</module>
+        <module>shallwe-spring-boot-starter/shallwe-lock-spring-boot-starter</module>
     </modules>
 
     <properties>
@@ -37,6 +38,7 @@
         <sms.version>1.0</sms.version>
         <springfox-swagger2.version>2.4.0</springfox-swagger2.version>
         <shallwe-common.version>1.0.0</shallwe-common.version>
+        <redisson.version>3.10.1</redisson.version>
     </properties>
 
     <parent>
@@ -47,6 +49,11 @@
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>org.redisson</groupId>
+                <artifactId>redisson</artifactId>
+                <version>${redisson.version}</version>
+            </dependency>
             <dependency>
                 <groupId>com.xiao</groupId>
                 <artifactId>shallwe-common</artifactId>

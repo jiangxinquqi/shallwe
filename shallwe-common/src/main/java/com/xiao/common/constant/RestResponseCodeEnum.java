@@ -55,6 +55,6 @@ public enum RestResponseCodeEnum implements GlobalCode<RestResponseCodeEnum> {
 
     @Override
     public String toString() {
-        return this.name();
+        return name() + "【code:" + code + ", message:" + message + "】";
     }
 }

@@ -20,6 +20,14 @@
         <module>shallwe-microservice-order</module>
         <module>shallwe-microservice-content</module>
         <module>shallwe-microservice-pay</module>
+        <module>shallwe-microservice-content/shallwe-microservice-content-common</module>
+        <module>shallwe-microservice-content/shallwe-microservice-content-service</module>
+        <module>shallwe-microservice-content/shallwe-microservice-content-api</module>
+        <module>shallwe-microservice-content/shallwe-microservice-content-dao</module>
+        <module>shallwe-microservice-pay/shallwe-microservice-pay-api</module>
+        <module>shallwe-microservice-pay/shallwe-microservice-pay-common</module>
+        <module>shallwe-microservice-pay/shallwe-microservice-pay-dao</module>
+        <module>shallwe-microservice-pay/shallwe-microservice-pay-service</module>
     </modules>
 
     <properties>

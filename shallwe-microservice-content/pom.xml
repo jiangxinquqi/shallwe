@@ -10,5 +10,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>shallwe-microservice-content</artifactId>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>shallwe-microservice-content-api</module>
+        <module>shallwe-microservice-content-common</module>
+        <module>shallwe-microservice-content-dao</module>
+        <module>shallwe-microservice-content-service</module>
+    </modules>
 
 </project>

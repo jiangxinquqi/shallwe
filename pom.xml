@@ -10,25 +10,16 @@
     <version>1.0.0-SNAPSHOT</version>
     <modules>
         <module>shallwe-common</module>
-        <module>shallwe-spring-boot-starter</module>
-        <module>shallwe-discovery-server-eureka</module>
         <module>shallwe-discovery-client-feign</module>
         <module>shallwe-discovery-gateway-zuul</module>
-        <module>shallwe-platform-sso</module>
-        <module>shallwe-platform-openapi</module>
-        <module>shallwe-microservice-user</module>
-        <module>shallwe-microservice-order</module>
+        <module>shallwe-discovery-server-eureka</module>
         <module>shallwe-microservice-content</module>
+        <module>shallwe-microservice-order</module>
         <module>shallwe-microservice-pay</module>
-        <module>shallwe-microservice-content/shallwe-microservice-content-common</module>
-        <module>shallwe-microservice-content/shallwe-microservice-content-service</module>
-        <module>shallwe-microservice-content/shallwe-microservice-content-api</module>
-        <module>shallwe-microservice-content/shallwe-microservice-content-dao</module>
-        <module>shallwe-microservice-pay/shallwe-microservice-pay-api</module>
-        <module>shallwe-microservice-pay/shallwe-microservice-pay-common</module>
-        <module>shallwe-microservice-pay/shallwe-microservice-pay-dao</module>
-        <module>shallwe-microservice-pay/shallwe-microservice-pay-service</module>
-        <module>shallwe-spring-boot-starter/shallwe-lock-spring-boot-starter</module>
+        <module>shallwe-microservice-user</module>
+        <module>shallwe-platform-openapi</module>
+        <module>shallwe-platform-sso</module>
+        <module>shallwe-spring-boot-starter</module>
     </modules>
 
     <properties>

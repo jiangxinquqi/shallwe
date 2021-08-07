@@ -6,9 +6,7 @@ package com.xiao.common.support;
  * @E-mail： xiaocen65535@163.com
  * @createTime： 2021/7/18 1:14
  */
-public interface Code<E extends Enum<E>> {
-
-    E getByCode(int code);
+public interface GlobalCode<E extends Enum<E>> {
 
     int getCode();
 

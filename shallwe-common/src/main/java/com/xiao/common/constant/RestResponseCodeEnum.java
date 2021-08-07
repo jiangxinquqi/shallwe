@@ -1,8 +1,9 @@
 package com.xiao.common.constant;
 
-import com.xiao.common.support.Code;
+import com.xiao.common.support.GlobalCode;
 
-import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @desc: 功能描述：（响应码）
@@ -10,7 +11,7 @@ import java.util.Arrays;
  * @E-mail： xiaoxiao65535@163.com
  * @createTime： 2018/8/31 13:34
  */
-public enum RestResponseCodeEnum implements Code<RestResponseCodeEnum> {
+public enum RestResponseCodeEnum implements GlobalCode<RestResponseCodeEnum> {
 
     HTTP_RESPONSE_101(101, "微信接口调用异常"),
     HTTP_RESPONSE_200(200, "sucess"),
@@ -23,27 +24,37 @@ public enum RestResponseCodeEnum implements Code<RestResponseCodeEnum> {
     private final int code;
     private final String message;
 
+    private static Map<Integer, RestResponseCodeEnum> restResponseCodeEnumMap;
+
+    static {
+        restResponseCodeEnumMap = new HashMap<>();
+        RestResponseCodeEnum[] values = RestResponseCodeEnum.values();
+        for (RestResponseCodeEnum restResponseCodeEnum : values) {
+            restResponseCodeEnumMap.put(restResponseCodeEnum.getCode(), restResponseCodeEnum);
+        }
+    }
+
     RestResponseCodeEnum(int code, String message) {
         this.code = code;
         this.message = message;
     }
 
-    public RestResponseCodeEnum getByCode(int code) {
-        RestResponseCodeEnum[] values = RestResponseCodeEnum.values();
-        for (RestResponseCodeEnum restResponseCodeEnum : values) {
-            if (restResponseCodeEnum.getCode() == code) {
-                return restResponseCodeEnum;
-            }
-        }
-        return null;
+    public static RestResponseCodeEnum getByCode(int code) {
+        return restResponseCodeEnumMap.get(code);
     }
 
+    @Override
     public int getCode() {
         return code;
     }
 
+    @Override
     public String getMessage() {
         return message;
     }
 
+    @Override
+    public String toString() {
+        return this.name();
+    }
 }

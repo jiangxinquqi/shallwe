@@ -1,6 +1,7 @@
 package com.xiao.common.vo;
 
 import com.xiao.common.constant.RestResponseCodeEnum;
+import com.xiao.common.exception.GlobalException;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -63,6 +64,13 @@ public class RestResponse<T> implements Serializable {
     }
 
     public T parse() {
+        return data;
+    }
+
+    public T tryParse() {
+        if (!isSuccess()) {
+            throw new GlobalException(RestResponseCodeEnum.getByCode(code), extraInfo);
+        }
         return data;
     }
 

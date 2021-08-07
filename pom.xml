@@ -15,7 +15,8 @@
         <module>shallwe-discovery-client-feign</module>
         <module>shallwe-discovery-gateway-zuul</module>
         <module>shallwe-microservice-user</module>
-        <module>shallwe-microservice-sso</module>
+        <module>shallwe-platform-sso</module>
+        <module>shallwe-platform-openapi</module>
     </modules>
 
     <properties>

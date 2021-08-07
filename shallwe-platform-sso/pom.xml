@@ -12,8 +12,8 @@
     <artifactId>shallwe-sso</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>shallwe-microservice-sso-server</module>
-        <module>shallwe-microservice-sso-client</module>
+        <module>shallwe-platform-sso-server</module>
+        <module>shallwe-platform-sso-client</module>
     </modules>
 
     <properties>

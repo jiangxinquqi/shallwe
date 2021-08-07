@@ -1,5 +1,5 @@
 echo off
-set APP_NAME=shallwe-discovery-gateway-zuul-1.0.0-SNAPSHOT.jar
+set APP_NAME=shallwe-discovery-gateway-zuul-1.0.0-RELEASE.jar
 set CONFIG= -Dspring.config.location=../config/application.yml
 set DEBUG_OPTS=
 if ""%1"" == ""debug"" (

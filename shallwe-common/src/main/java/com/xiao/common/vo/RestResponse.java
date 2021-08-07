@@ -36,10 +36,6 @@ public class RestResponse<T> implements Serializable {
      */
     private Object extraInfo;
 
-    public RestResponse(RestResponseCodeEnum restResponseCodeEnum, T data) {
-        this(restResponseCodeEnum, data, null);
-    }
-
     public RestResponse(RestResponseCodeEnum restResponseCodeEnum, T data, Object extraInfo) {
         this.code = restResponseCodeEnum.getCode();
         this.message = restResponseCodeEnum.getMessage();

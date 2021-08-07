@@ -11,6 +11,7 @@ import com.xiao.common.constant.RestResponseCodeEnum;
 public class GlobalException extends RuntimeException {
 
     private RestResponseCodeEnum restResponseCodeEnum;
+    private Object extraInfo;
 
     public GlobalException(RestResponseCodeEnum restResponseCodeEnum) {
         super(restResponseCodeEnum.toString());
@@ -20,10 +21,14 @@ public class GlobalException extends RuntimeException {
     public GlobalException(RestResponseCodeEnum restResponseCodeEnum, Object extraInfo) {
         super(restResponseCodeEnum.toString() + ", extraInfo: " + extraInfo);
         this.restResponseCodeEnum = restResponseCodeEnum;
+        this.extraInfo = extraInfo;
     }
 
     public RestResponseCodeEnum getRestResponseCodeEnum() {
         return restResponseCodeEnum;
     }
 
+    public Object getExtraInfo() {
+        return extraInfo;
+    }
 }

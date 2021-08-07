@@ -10,12 +10,12 @@
     <version>1.0.0</version>
     <modules>
         <module>shallwe-common</module>
+        <module>shallwe-spring-boot-starter</module>
         <module>shallwe-discovery-server-eureka</module>
         <module>shallwe-discovery-client-feign</module>
         <module>shallwe-discovery-gateway-zuul</module>
-        <module>shallwe-demo</module>
-        <module>shallwe-user</module>
-        <module>shallwe-springboot-starter</module>
+        <module>shallwe-microservice-user</module>
+        <module>shallwe-microservice-sso</module>
     </modules>
 
     <properties>
@@ -24,6 +24,7 @@
         <java.version>1.8</java.version>
         <sms.version>1.0</sms.version>
         <springfox-swagger2.version>2.4.0</springfox-swagger2.version>
+        <shallwe-common.version>1.0.0</shallwe-common.version>
     </properties>
 
     <parent>
@@ -34,6 +35,11 @@
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>com.xiao</groupId>
+                <artifactId>shallwe-common</artifactId>
+                <version>${shallwe-common.version}</version>
+            </dependency>
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>

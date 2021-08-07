@@ -9,7 +9,7 @@ MAINTAINER jianjun.xiao <xiaocen655356@163.com>
 # 其效果是在主机 /var/lib/docker 目录下创建了一个临时文件，并链接到容器的/tmp
 VOLUME /tmp
 # 将jar包添加到容器中并更名为app.jar
-ADD shallwe-discovery-server-eureka-1.0.0.jar shallwe-discovery-server-eureka.jar
+ADD shallwe-discovery-server-eureka-1.0.0-SNAPSHOT.jar shallwe-discovery-server-eureka.jar
 # 运行jar包
 RUN bash -c 'touch /shallwe-discovery-server-eureka.jar'
 ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/shallwe-discovery-server-eureka.jar"]

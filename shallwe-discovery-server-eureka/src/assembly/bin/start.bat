@@ -1,5 +1,5 @@
 echo off
-set APP_NAME=shallwe-discovery-server-eureka-1.0.0.jar
+set APP_NAME=shallwe-discovery-server-eureka-1.0.0-SNAPSHOT.jar
 set CONFIG= -Dspring.config.location=../config/application.yml
 set DEBUG_OPTS=
 if ""%1"" == ""debug"" (

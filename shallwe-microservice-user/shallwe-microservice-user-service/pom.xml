@@ -5,7 +5,7 @@
     <parent>
         <artifactId>shallwe-microservice-user</artifactId>
         <groupId>com.xiao</groupId>
-        <version>1.0.0</version>
+        <version>1.0.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -15,17 +15,17 @@
         <dependency>
             <groupId>com.xiao</groupId>
             <artifactId>shallwe-microservice-user-api</artifactId>
-            <version>1.0.0</version>
+            <version>1.0.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>com.xiao</groupId>
             <artifactId>shallwe-microservice-user-dao</artifactId>
-            <version>1.0.0</version>
+            <version>1.0.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>com.xiao</groupId>
             <artifactId>shallwe-config-spring-boot-starter</artifactId>
-            <version>1.0.0</version>
+            <version>1.0.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>

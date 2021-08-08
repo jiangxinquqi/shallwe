@@ -1,7 +1,6 @@
 package com.xiao.starter.lock;
 
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.redisson.Redisson;
 import org.redisson.api.RLock;
 import org.redisson.api.RedissonClient;

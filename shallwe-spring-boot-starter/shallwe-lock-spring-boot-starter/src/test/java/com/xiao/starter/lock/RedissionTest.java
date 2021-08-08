@@ -44,6 +44,13 @@ public class RedissionTest {
                     countDownLatch.countDown();
                 } catch (InterruptedException e) {
                     e.printStackTrace();
+                } finally {
+                    if(lock.isHeldByCurrentThread()){
+                        System.out.println("当前持有锁，我就不解");
+                    } else {
+                        System.out.println(name + "解锁");
+                        lock.unlock();
+                    }
                 }
             });
         }

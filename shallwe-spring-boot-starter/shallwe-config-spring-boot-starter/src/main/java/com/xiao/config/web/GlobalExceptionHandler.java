@@ -16,8 +16,8 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
  * @E-mail： xiaocen65535@163.com
  * @createTime： 2021/8/7 19:07
  */
-@RestControllerAdvice
 @Slf4j
+@RestControllerAdvice
 public class GlobalExceptionHandler {
 
     @ExceptionHandler(GlobalException.class)

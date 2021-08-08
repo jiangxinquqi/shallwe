@@ -3,14 +3,20 @@ server:
 eureka:
   instance:
     hostname: localhost
-  client:
-    registerWithEureka: false
-    fetchRegistry: false
-    serviceUrl:
+    lease-renewal-interval-in-seconds: 30 # 服务续约（心跳）频率，单位：秒，缺省30
+  client: # Eureka 客户端配置，因为Eureka注册中心本身也是一个客户端，所以需要配置service-url
+    service-url:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+    fetch-registry: false # 是否从Eureka获取注册信息，缺省：true, 一般情况下，Eureka服务端是不需要的
+    register-with-eureka: false # 是否向注册中心注册自己，缺省：true,一般情况下，Eureka服务端是不需要再注册自己的
+  server: # Eureka 服务端配置
+    enable-self-preservation: true # 是否允许开启自我保护模式，缺省：true,当Eureka服务器在短时间内丢失过多客户端时，自我保护模式可使服务端不再删除失去连接的客户端
+    renewal-percent-threshold: 0.49 # 该值用于计算心跳阈值，如果 Renews (last min) 小于等于 Renews threshold，将会开启自我保护机制。
+    eviction-interval-timer-in-ms: 60000 # Eureka服务器清理无效节点的时间间隔，单位：毫秒，缺省：60000，即60秒
+    peer-eureka-nodes-update-interval-ms: 600000 # Peer节点更新间隔，单位：毫秒, 默认10分钟
 spring:
   application:
-    name: eurka-server
+    name: eureka-server
   output:
     ansi:
       enabled: detect

@@ -30,6 +30,7 @@
         <springfox-swagger2.version>2.4.0</springfox-swagger2.version>
         <shallwe-common.version>1.0.0-RELEASE</shallwe-common.version>
         <redisson.version>3.10.1</redisson.version>
+        <jsch.version>0.1.55</jsch.version>
     </properties>
 
     <parent>
@@ -41,21 +42,20 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
+                <groupId>com.jcraft</groupId>
+                <artifactId>jsch</artifactId>
+                <version>${jsch.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>org.redisson</groupId>
                 <artifactId>redisson</artifactId>
                 <version>${redisson.version}</version>
             </dependency>
+            <!-- shallwe  -->
             <dependency>
                 <groupId>com.xiao</groupId>
                 <artifactId>shallwe-common</artifactId>
                 <version>${shallwe-common.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>Finchley.SR1</version>
-                <type>pom</type>
-                <scope>import</scope>
             </dependency>
             <!--云MAS 短信SKD by the way 移动超级坑-->
             <dependency>
@@ -73,6 +73,13 @@
                 <groupId>io.springfox</groupId>
                 <artifactId>springfox-swagger-ui</artifactId>
                 <version>${springfox-swagger2.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>Finchley.SR1</version>
+                <type>pom</type>
+                <scope>import</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>

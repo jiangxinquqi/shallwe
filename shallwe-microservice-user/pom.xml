@@ -11,6 +11,7 @@
 
     <artifactId>shallwe-microservice-user</artifactId>
     <packaging>pom</packaging>
+    
     <modules>
         <module>shallwe-microservice-user-api</module>
         <module>shallwe-microservice-user-dao</module>

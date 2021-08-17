@@ -94,7 +94,7 @@ spec: # 资源规范字段
   type: NodePort # 可选 ClusterIP NodePort 类型
   ports:
     - port: 30001 # service 端口（K8S集群内部通信用的端口口）
-      targetPort: 8761 # 指向容器暴露的端口-和containerPort保持一致
+      targetPort: 8761 # 指向容器暴露的端口-和containerPort保持一 致
       protocol: TCP # 协议
       name: http # 端口名称
       nodePort: 30015

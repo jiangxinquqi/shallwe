@@ -14,6 +14,7 @@
     <modules>
         <module>shallwe-config-spring-boot-starter</module>
         <module>shallwe-lock-spring-boot-starter</module>
+        <module>shallwe-mybatis-spring-boot-starter</module>
     </modules>
 
     <dependencies>

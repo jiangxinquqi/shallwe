@@ -1,5 +1,8 @@
 package com.xiao.common.support;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.Date;
 
 /**
@@ -8,33 +11,12 @@ import java.util.Date;
  * @E-mail： xiaocen65535@163.com
  * @createTime： 2021/8/8 16:28
  */
+@Getter
+@Setter
 public abstract class BaseDO<I> {
 
     private I id;
     private Date createTime;
     private Date modifiedTime;
 
-    public I getId() {
-        return id;
-    }
-
-    public void setId(I id) {
-        this.id = id;
-    }
-
-    public Date getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
-    }
-
-    public Date getModifiedTime() {
-        return modifiedTime;
-    }
-
-    public void setModifiedTime(Date modifiedTime) {
-        this.modifiedTime = modifiedTime;
-    }
 }

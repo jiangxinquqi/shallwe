@@ -38,3 +38,11 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*" # "*"号代表启用所有的监控端点，可以单独启用，例如，health，info，metrics等。
+  endpoint:
+    health:
+      show-details: always

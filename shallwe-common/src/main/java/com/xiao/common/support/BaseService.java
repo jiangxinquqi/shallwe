@@ -1,5 +1,7 @@
 package com.xiao.common.support;
 
+import java.util.List;
+
 /**
  * @desc: 功能描述：<服务层抽象>
  * @author： jianjun.xiao
@@ -10,11 +12,17 @@ public interface BaseService<I, D extends BaseDO<I>> {
 
     void add(D baseDO);
 
+    void addSelective(D baseDO);
+
     void deleteById(I id);
 
     void updateById(D baseDO);
 
+    void updateByIdSelective(D baseDO);
+
     D getById(I id);
+
+    List<D> listBySelective(D baseDO);
 
     default void save(D baseDO) {
         if (null != getById(baseDO.getId())) {

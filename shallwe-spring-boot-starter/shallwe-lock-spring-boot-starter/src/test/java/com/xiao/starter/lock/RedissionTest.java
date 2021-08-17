@@ -23,7 +23,7 @@ public class RedissionTest {
     public void test() throws Exception {
         Config config = new Config();
         config.useSingleServer().setAddress("redis://192.168.1.51:6379");
-        // config.useSingleServer().setPassword("redis1234");
+        // config.  ().setPassword("redis1234");
         final RedissonClient client = Redisson.create(config);
         RLock lock = client.getLock("seele:task-scheme:userorg-sync1");
 

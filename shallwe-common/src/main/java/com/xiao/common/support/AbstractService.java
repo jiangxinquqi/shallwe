@@ -14,6 +14,10 @@ public class AbstractService<I, D extends BaseDO<I>> implements BaseService<I, D
 
     protected BaseMapper<I, D> baseMapper;
 
+    public AbstractService(BaseMapper baseMapper) {
+        this.baseMapper = baseMapper;
+    }
+
     @Override
     public void add(D baseDO) {
         baseMapper.insert(baseDO);

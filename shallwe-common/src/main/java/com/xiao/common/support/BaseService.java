@@ -1,5 +1,7 @@
 package com.xiao.common.support;
 
+import com.xiao.common.vo.PageBean;
+
 import java.util.List;
 
 /**

@@ -1,5 +1,6 @@
 package com.xiao.common.util;
 
+import java.io.*;
 import java.util.UUID;
 
 /**
@@ -11,7 +12,7 @@ import java.util.UUID;
 public class StringUtils {
 
     /**
-     * 功能描述: <生成随机16位大写字符>
+     * 生成随机16位大写字符
      *
      * @Author: jianjun.xiao
      * @Date: 2018/8/31 13:10
@@ -21,7 +22,7 @@ public class StringUtils {
     }
 
     /**
-     * 功能描述: <生成随机uuid字符串>
+     * 生成随机uuid字符串
      *
      * @Author: jianjun.xiao
      * @Date: 2018/8/31 13:10
@@ -31,7 +32,7 @@ public class StringUtils {
     }
 
     /**
-     * 功能描述: <生成随机uuid大写字符串>
+     * 生成随机uuid大写字符串
      *
      * @Author: jianjun.xiao
      * @Date: 2018/8/31 13:10
@@ -41,7 +42,7 @@ public class StringUtils {
     }
 
     /**
-     * 功能描述: <判断某个字符串是否为 null 或者 为"">
+     * 判断某个字符串是否为 null 或者 为""
      *
      * @Author: jianjun.xiao
      * @Date: 2018/8/31 13:11
@@ -51,7 +52,7 @@ public class StringUtils {
     }
 
     /**
-     * <p>判断字符串 不为null & "" </>
+     * 判断字符串 不为null & ""
      *
      * @param str
      * @return

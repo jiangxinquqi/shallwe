@@ -2,7 +2,7 @@ package com.xiao.common.util;
 
 import sun.misc.BASE64Encoder;
 
-import java.io.IOException;
+import java.io.*;
 import java.net.URLEncoder;
 
 /**
@@ -67,6 +67,84 @@ public class FileUtils {
     public static String getRealName(String fileName) {
         String sepa = System.getProperty("file.separator");
         return fileName.substring(fileName.lastIndexOf(sepa) + 1);
+    }
+
+    /**
+     * 二进制文件转为16进制字符串
+     *
+     * @param file 二进制文件
+     * @return 16进制字符串
+     */
+    public static String binaryFile2HexString(File file) {
+        try {
+            DataInputStream din = new DataInputStream(new FileInputStream(file));
+            StringBuilder hexData = new StringBuilder();
+            byte temp = 0;
+            for (int i = 0; i < file.length(); i++) {
+
+                temp = din.readByte();
+
+                // 以十六进制的无符号整数形式返回一个字符串表示形式。
+                String str = Integer.toHexString(temp);
+
+                if (str.length() == 8) {// 去掉补位的f
+                    str = str.substring(6);
+                }
+                if (str.length() == 1) {
+                    str = "0" + str;
+                }
+                hexData.append(str.toUpperCase());
+            }
+
+            din.close();
+
+            return hexData.toString();
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    /**
+     * 16进制字符串转二进制文件
+     *
+     * @param hexStr 16进制字符串
+     * @param file   二进制文件
+     */
+    public static void hexString2BinaryFile(String hexStr, File file) {
+        try {
+            BufferedOutputStream bof = new BufferedOutputStream(new FileOutputStream(file));
+            bof.write(hexStr2Bytes(hexStr));
+            bof.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static byte uniteBytes(String src0, String src1) {
+        byte b0 = Byte.decode("0x" + src0).byteValue();
+        b0 = (byte) (b0 << 4);
+        byte b1 = Byte.decode("0x" + src1).byteValue();
+        byte ret = (byte) (b0 | b1);
+        return ret;
+    }
+
+    private static byte[] hexStr2Bytes(String src) {
+        int m = 0, n = 0;
+        int l = src.length() / 2;
+        //System.out.println(l);
+        byte[] ret = new byte[l];
+        for (int i = 0; i < l; i++) {
+            m = i * 2 + 1;
+            n = m + 1;
+            ret[i] = uniteBytes(src.substring(i * 2, m), src.substring(m, n));
+        }
+        return ret;
     }
 
 }

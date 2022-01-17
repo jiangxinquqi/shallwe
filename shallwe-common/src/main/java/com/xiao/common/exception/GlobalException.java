@@ -1,6 +1,7 @@
 package com.xiao.common.exception;
 
 import com.xiao.common.support.GlobalCode;
+import lombok.Getter;
 
 /**
  * @desc: 功能描述：（自定义异常）
@@ -8,6 +9,7 @@ import com.xiao.common.support.GlobalCode;
  * @E-mail： xiaoxiao65535@163.com
  * @createTime： 2018/8/31 13:33
  */
+@Getter
 public class GlobalException extends RuntimeException {
 
     private GlobalCode globalCode;

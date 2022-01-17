@@ -24,7 +24,10 @@ public class GlobalExceptionHandler {
     @ResponseBody
     public RestResponse han(GlobalException globalException) {
         // log.error("GlobalException：", globalException);
-        return RestResponse.fail(globalException.getRestResponseCodeEnum(), globalException.getExtraInfo());
+        return RestResponse.fail(
+                globalException.getCode(),
+                globalException.getMessage(),
+                globalException.getExtraInfo());
     }
 
     @ExceptionHandler(Exception.class)

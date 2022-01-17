@@ -2,6 +2,7 @@ package com.xiao.common.vo;
 
 import com.xiao.common.constant.RestResponseCodeEnum;
 import com.xiao.common.exception.GlobalException;
+import com.xiao.common.support.GlobalCode;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -36,11 +37,19 @@ public class RestResponse<T> implements Serializable {
      */
     private Object extraInfo;
 
-    public RestResponse(RestResponseCodeEnum restResponseCodeEnum, T data, Object extraInfo) {
-        this.code = restResponseCodeEnum.getCode();
-        this.message = restResponseCodeEnum.getMessage();
+    public RestResponse(GlobalCode globalCode, T data, Object extraInfo) {
+        this(globalCode.getCode(), globalCode.getMessage(), data, extraInfo);
+    }
+
+    public RestResponse(int code, String message, T data, Object extraInfo) {
+        this.code = code;
+        this.message = message;
         this.data = data;
         this.extraInfo = extraInfo;
+    }
+
+    public static <T> RestResponse success() {
+        return success(null);
     }
 
     public static <T> RestResponse success(T data) {
@@ -51,12 +60,16 @@ public class RestResponse<T> implements Serializable {
         return new RestResponse(RestResponseCodeEnum.HTTP_RESPONSE_200, data, extraInfo);
     }
 
-    public static <T> RestResponse fail(RestResponseCodeEnum restResponseCodeEnum) {
-        return fail(restResponseCodeEnum, null);
+    public static <T> RestResponse fail(GlobalCode globalCode) {
+        return fail(globalCode, null);
     }
 
-    public static <T> RestResponse fail(RestResponseCodeEnum restResponseCodeEnum, Object extraInfo) {
-        return new RestResponse(restResponseCodeEnum, null, extraInfo);
+    public static <T> RestResponse fail(GlobalCode globalCode, Object extraInfo) {
+        return fail(globalCode.getCode(), globalCode.getMessage(), extraInfo);
+    }
+
+    public static <T> RestResponse fail(int code, String message, Object extraInfo) {
+        return new RestResponse(code, message, null, extraInfo);
     }
 
     public T parse() {

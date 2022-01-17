@@ -6,10 +6,12 @@ package com.xiao.common.support;
  * @E-mail： xiaocen65535@163.com
  * @createTime： 2021/7/18 1:14
  */
-public interface GlobalCode<E extends Enum<E>> {
+public interface GlobalCode {
 
     int getCode();
 
     String getMessage();
+
+    String name();
 
 }

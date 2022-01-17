@@ -11,7 +11,7 @@ import java.util.Map;
  * @E-mail： xiaoxiao65535@163.com
  * @createTime： 2018/8/31 13:34
  */
-public enum RestResponseCodeEnum implements GlobalCode<RestResponseCodeEnum> {
+public enum RestResponseCodeEnum implements GlobalCode {
 
     HTTP_RESPONSE_101(101, "微信接口调用异常"),
     HTTP_RESPONSE_200(200, "sucess"),

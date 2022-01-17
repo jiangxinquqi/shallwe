@@ -65,7 +65,7 @@ public class RestResponse<T> implements Serializable {
 
     public T tryParse() {
         if (!isSuccess()) {
-            throw new GlobalException(RestResponseCodeEnum.getByCode(code), extraInfo);
+            throw new GlobalException(code, "INNER_SERVER_ERROR", message, extraInfo.toString(), null);
         }
         return data;
     }

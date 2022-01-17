@@ -1,6 +1,6 @@
 package com.xiao.common.exception;
 
-import com.xiao.common.constant.RestResponseCodeEnum;
+import com.xiao.common.support.GlobalCode;
 
 /**
  * @desc: 功能描述：（自定义异常）
@@ -10,25 +10,37 @@ import com.xiao.common.constant.RestResponseCodeEnum;
  */
 public class GlobalException extends RuntimeException {
 
-    private RestResponseCodeEnum restResponseCodeEnum;
-    private Object extraInfo;
+    private GlobalCode globalCode;
 
-    public GlobalException(RestResponseCodeEnum restResponseCodeEnum) {
-        super(restResponseCodeEnum.toString());
-        this.restResponseCodeEnum = restResponseCodeEnum;
+    private Integer code;
+    private String name;
+    private String message;
+    private String extraInfo;
+
+    public GlobalException(GlobalCode globalCode) {
+        this(globalCode, globalCode.getMessage());
     }
 
-    public GlobalException(RestResponseCodeEnum restResponseCodeEnum, Object extraInfo) {
-        super(restResponseCodeEnum.toString() + ", extraInfo: " + extraInfo);
-        this.restResponseCodeEnum = restResponseCodeEnum;
+    public GlobalException(GlobalCode globalCode, Throwable cause) {
+        this(globalCode, cause.getMessage());
+    }
+
+    public GlobalException(GlobalCode globalCode, String extraInfo) {
+        this(globalCode, extraInfo, null);
+    }
+
+    public GlobalException(GlobalCode globalCode, String extraInfo, Throwable cause) {
+        this(globalCode.getCode(), globalCode.name(), globalCode.getMessage(), extraInfo, cause);
+        this.globalCode = globalCode;
+    }
+
+    public GlobalException(Integer code, String name, String message, String extraInfo, Throwable cause) {
+        super(String.format("%s{code=%s, message=%s, extraInfo=%s}", name, code, message, extraInfo), cause);
+        this.code = code;
+        this.name = name;
+        this.message = message;
         this.extraInfo = extraInfo;
     }
 
-    public RestResponseCodeEnum getRestResponseCodeEnum() {
-        return restResponseCodeEnum;
-    }
 
-    public Object getExtraInfo() {
-        return extraInfo;
-    }
 }

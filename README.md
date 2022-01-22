@@ -39,4 +39,7 @@ Spring Cloud|Finchley.SR1|微服务治理|https://projects.spring.io/spring-clou
     com.xiao.micro.*.dao.mapper                   --应用数据模型映射
     com.xiao.micro.*.web.controller               --web工程
     
-        
+## 微服务打包启动方式
+```shell
+mvn clean package -pl com.xiao:${artifactId} -am -DskipTests
+```

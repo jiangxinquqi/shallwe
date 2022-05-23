@@ -7,9 +7,44 @@
 Spring Boot|2.0.4.RELEASE|容器|https://spring.io/projects/spring-boot
 Spring Cloud|Finchley.SR1|微服务治理|https://projects.spring.io/spring-cloud/
 
-    
-    
-## 项目结构
+## 分层架构
+
+采用四层架构：
+
+- 表现层（Presentation）
+- 应用（逻辑）层（Application）
+- 领域层（Domain）
+- 基础设施层（Infrastructure）
+
+宽松的分层系统表⽰： 每层都可以使⽤它的下层服务，⽽不仅仅是下⼀层的服务。 每层都可能是半透明的，这意味着有些服务只对上⼀层可见，⽽有些服务对上⾯的所有层都可见。
+
+## 目录结构
+
+业务域 名.层名.业务模块名.构造型名
+
+    com.xiao.order.domain.model.*      
+
+    com.xiao.order.infrastructure.peristent.redis
+    com.xiao.order.infrastructure.peristent.mbatis
+    com.xiao.order.infrastructure.peristent.jpa
+    com.xiao.order.infrastructure.peristent.solr
+    com.xiao.order.infrastructure.mq 
+
+    com.xiao.order.application.*                    
+
+    com.xiao.order.presentation.rest
+    com.xiao.order.presentation.grpc
+    com.xiao.order.presentation.websocket
+
+## 模块
+
+使用module横向分割
+
+    shallwe【pom】
+    |——order-core
+    |——order-peristent
+    |——order-service
+
     shallwe【pom】	
     |——project-tools【dir】	                            -- 一些开发工具  				
     |——project-doc【dir】	   	                        -- 项目文档			
@@ -24,22 +59,9 @@ Spring Cloud|Finchley.SR1|微服务治理|https://projects.spring.io/spring-clou
         |——shallwe-microservice-*-dao【jar】             --微服务持久层【代码机自动生成代码】
         |——shallwe-microservice-*-api【jar】             --微服务顶层接口定义
         |——shallwe-microservice-*-service【jar | war】   --微服务提供【端口：8762 & 8763】
-    
-    
-## 包结构 
-    com.xiao.common.util                    --系统公共组件-工具类
-    com.xiao.common.vo                      --系统公共组件-视图模型
-    com.xiao.common.exception               --系统公共组件-自定义异常
-    com.xiao.common.constant                --系统公共组件-常量
-    com.xiao.micro.*.common                       --应用公共组件（*代表具体的系统）
-    com.xiao.micro.*.api                          --应用微服务定义（*代表具体的系统）
-    com.xiao.micro.*.controller                   --应用controller层（*代表具体的系统）
-    com.xiao.micro.*.service                      --应用service层
-    com.xiao.micro.*.dao                          --应用数据模型
-    com.xiao.micro.*.dao.mapper                   --应用数据模型映射
-    com.xiao.micro.*.web.controller               --web工程
-    
+
 ## 微服务打包启动方式
+
 ```shell
 mvn clean package -pl com.xiao:${artifactId} -am -DskipTests
 ```

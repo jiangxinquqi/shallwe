@@ -30,20 +30,19 @@ Spring Cloud|Finchley.SR1|微服务治理|https://projects.spring.io/spring-clou
     com.xiao.order.infrastructure.peristent.solr
     com.xiao.order.infrastructure.mq 
 
-    com.xiao.order.application.*                    
+    com.xiao.order.app.*                    
 
-    com.xiao.order.presentation.rest
-    com.xiao.order.presentation.grpc
-    com.xiao.order.presentation.websocket
+    com.xiao.order.adapter.rpc
+    com.xiao.order.adapter.grpc
+    com.xiao.order.adapter.websocket
 
 ## 模块
 
 使用module横向分割
 
     shallwe【pom】
-    |——order-core
-    |——order-peristent
-    |——order-service
+    |——shallwe-order-core
+    |——shallwe-order-service
 
     shallwe【pom】	
     |——project-tools【dir】	                            -- 一些开发工具  				
